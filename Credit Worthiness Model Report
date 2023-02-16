@@ -1,0 +1,83 @@
+# Credit Worthiness Model
+
+## Overview of the Analysis
+
+As part of this analysis, we aimed to build a machine learning model that could accurately identify the creditworthiness of borrowers based on a dataset of historical lending activity from a peer-to-peer lending services company. Given that healthy loans outnumber high-risk loans, this posed a classification problem that was inherently imbalanced. To address this issue, we utilized the imbalanced-learn library and trained and evaluated logistic regression models using two different versions of the dataset: the original dataset and the resampled data obtained using the RandomOverSampler module from the imbalanced-learn library.
+
+
+## Packages and Tools:
+
+Python 3: programming language used to develop the application
+Pandas: data analysis and manipulation library used to handle and process the data
+Scikit-learn: machine learning library used to build and train the models
+Jupyter Notebook: interactive programming environment used to run and test the code
+Git: version control system used to manage and store the code
+numpy: a Python library used for working with arrays and matrix of n-dimensional data.
+pathlib: a Python library used for working with file paths.
+balanced_accuracy_score: a function from sklearn.metrics used to calculate the balanced accuracy score of a classifier.
+confusion_matrix: a function from sklearn.metrics used to compute the confusion matrix for a classifier.
+classification_report_imbalanced: a function from imblearn.metrics used to generate a classification report that includes precision, recall, and F1-score for imbalanced datasets.
+warnings: a Python library used for handling warning messages.
+
+
+## To use the application:
+
+Install Python 3 and the necessary libraries (Pandas and Scikit-learn).
+Clone the code from the Git repository.
+Open the Jupyter Notebook and run the code.
+Input the desired data and select the machine learning model to use.
+View the predicted credit risk output for the input data.
+That's it! With these steps, you can use the application to predict credit risk using machine learning.
+
+
+## Results
+
+* Machine Learning Model 1:
+
+* Balanced Accuracy Score: 95.35%
+
+* Precision Score: 0.87
+
+* Recall Score: 0.91
+
+* Precision score is 100% for healthy loans and 0.85% for high-risk loans
+
+* Recall score is 99% for healthy loans and 0.89% for high-risk loans
+
+* Accuracy score is 99%
+
+* Macro-averaged F1 score is 0.93 and weighted-averaged F1 score is 0.99
+
+* Model performed well in predicting healthy loans, while precision and recall scores were lower for high-risk loans
+
+* Accuracy score is high, but other metrics should be considered for imbalanced datasets
+
+
+* Machine Learning Model 2:
+  
+* Balanced Accuracy Score: 97.41%
+
+* Precision Score: 0.91
+
+* Recall Score: 0.94
+
+* After resampling, accuracy score is 99% for 19,384 predictions
+
+* Macro-averaged precision, recall, and F1-score were 0.92, 0.95, and 0.94 respectively
+
+* Weighted-averaged precision, recall, and F1-score were 0.99, 0.99, and 0.99 respectively
+
+* Precision score is 100% for healthy loans and 0.85% for high-risk loans
+
+* Recall score is 99% for healthy loans and 0.91% for high-risk loans
+
+* Model performed well in predicting healthy loans, but precision and recall scores for high-risk loans need further refinement
+
+
+## Summary
+
+For both cases, we computed the count of target classes, trained a logistic regression classifier, calculated the balanced accuracy score, generated a confusion matrix, and generated a classification report. We also utilized several Python packages and modules, including numpy, pandas, pathlib, sklearn, imblearn, and warnings.
+
+Based on the results, it seems that the second machine learning model, which used the resampled data, performed better than the first model, which used the original dataset. The resampled data increased the balanced accuracy score and precision and recall scores, resulting in a more accurate prediction of high-risk loans. However, it is important to note that performance may depend on the specific problem we are trying to solve, such as whether it is more important to predict healthy loans (0s) or high-risk loans (1s).
+
+In conclusion, based on the results, we recommend using the second machine learning model, which used the resampled data, to predict the creditworthiness of borrowers. However, further evaluation methods should be considered to ensure the accuracy and reliability of the model.
